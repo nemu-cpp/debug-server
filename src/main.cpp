@@ -4,7 +4,13 @@
     See https://github.com/nemu-cpp/debug-server/blob/main/LICENSE.txt
 */
 
+#include <Nemu/WebFramework.hpp>
+#include <iostream>
+
 int main(int argc, char* argv[])
 {
+    Ishiko::StreamLoggingSink sink(std::cout);
+    Ishiko::Logger log(sink);
+
     return 0;
 }
