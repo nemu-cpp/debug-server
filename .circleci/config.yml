@@ -7,6 +7,9 @@ jobs:
       - run: 
           name: "Set NEMU_CPP environment variable and create workspace directory"
           command: mkdir -p /projects/nemu/cpp && echo 'export NEMU_CPP="/projects/nemu/cpp"' >> $BASH_ENV
+      - run:
+          name: "Install build dependency: Nemu/C++ WebFramework"
+          command: cd /projects/nemu/cpp && git clone https://github.com/nemu-cpp/web-framework.git && cd web-framework/build/gnumake && make
       - checkout:
           path: /projects/nemu/cpp/debug-server
       - run:
